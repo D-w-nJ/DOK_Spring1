@@ -5,6 +5,15 @@ spring:
   application:
     name: demo
 
+  devtools:
+    livereload:
+      enabled: true
+    thymeleaf:
+      cache: false
+      check-template-location: true
+      prefix: classpath:/templates/
+      suffix: .html
+
   datasource:
     platform: mysql
     url: jdbc:mysql://database-2.cn6qj3gf4bmy.ap-northeast-2.rds.amazonaws.com/dok_spring1

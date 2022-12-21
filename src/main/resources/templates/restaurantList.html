@@ -1,0 +1,54 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script>
+        function r_clickFunc(restaurantName){
+            var url = 'http://localhost:9000/app/restaurants/menus/:' + restaurantName;
+            window.location.href= url;
+        }
+    </script>
+</head>
+<body>
+<h1>배달</h1>
+    <h2>카테고리</h2>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=치킨'" class="btn btn-light">치킨</button>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=패스트푸드'" class="btn btn-light">패스트푸드</button>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=피자'" class="btn btn-light">피자</button>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=중식'" class="btn btn-light">중식</button>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=카페-디저트'" class="btn btn-light">카페-디저트</button>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=아시안'" class="btn btn-light">아시안</button>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=분식'" class="btn btn-light">분식</button>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=족발-보쌈'" class="btn btn-light">족발-보쌈</button>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=야식'" class="btn btn-light">야식</button>
+    <button type="button" onclick="location.href='http://localhost:9000/app/restaurants?category=찜-탕-찌개'" class="btn btn-light">찜-탕-찌개</button>
+<div class="container">
+    <br>
+    <br>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="restaurant : ${restaurantsList}">
+                <td th:text="${restaurant.getRestaurantIdx()}"></td>
+                <td th:text="${restaurant.getRestaurantName()}" th:local="${restaurant.getRestaurantName()}" th:onclick="r_clickFunc(${restaurant.getRestaurantName()})"></td>
+                <td th:text="${restaurant.getCategory()}"></td>
+                <td th:text="${restaurant.getAddress()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -5,10 +5,8 @@ import lombok.*;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
-public class PostRestaurantReq {
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class PostRestaurantLoginReq {
     private String restaurantName;
     private String password;
-    private String address;
-    private String category;
 }

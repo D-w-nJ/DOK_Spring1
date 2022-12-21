@@ -10,6 +10,7 @@ import lombok.Setter;
 public class Restaurant {
     private int RestaurantIdx;
     private String RestaurantName;
+    private String password;
     private String address;
     private String category;
 }

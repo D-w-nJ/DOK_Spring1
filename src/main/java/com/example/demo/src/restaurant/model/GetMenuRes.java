@@ -7,9 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class GetRestaurantRes {
-    private int RestaurantIdx;
-    private String RestaurantName;
-    private String address;
-    private String category;
+public class GetMenuRes {
+    private int menuIdx;
+    private String restaurantName;
+    private String menuName;
+    private int price;
 }
